@@ -15,5 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return collages.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        cell.textLabel?.text = collages[indexPath.row]
+        return cell
+    }
 
 }
