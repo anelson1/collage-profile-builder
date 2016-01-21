@@ -23,5 +23,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = collages[indexPath.row]
         return cell
     }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            collages.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+    }
 
+    @IBAction func onPlusTapped(sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add City", message: nil, preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Add City Here"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
+            let collageTextField = alert.textFields![0] as UITextField
+            self.collages.append(collageTextField.text!)
+            self.tabeView.reloadData()
+        }
+        alert.addAction(addAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LNy-5E-COv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LNy-5E-COv">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -46,8 +47,20 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LNy-5E-COv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5RI-Su-dg5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LNy-5E-COv" secondAttribute="trailing" constant="-20" id="6ag-9J-XTp"/>
+                            <constraint firstItem="LNy-5E-COv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Yu6-tQ-Jjo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LNy-5E-COv" secondAttribute="bottom" id="lGN-OH-RSb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pzq-dd-A9E"/>
+                    <navigationItem key="navigationItem" id="pzq-dd-A9E">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Ux-vs-jQt">
+                            <connections>
+                                <action selector="onPlusTapped:" destination="BYZ-38-t0r" id="7nB-yT-sDP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tabeView" destination="LNy-5E-COv" id="pPs-UW-VSm"/>
                     </connections>
