@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tabeView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     var collages = ["University Of Illinois", "Airforce Acadamy", "Harvard"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        editButton.tag = 0
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collages.count
@@ -44,6 +46,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         alert.addAction(addAction)
         self.presentViewController(alert, animated: true, completion: nil)
-        
+    }
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let collage = collages[sourceIndexPath.row]
+        collages.removeAtIndex(sourceIndexPath.row)
+        collages.insert(collage, atIndex: destinationIndexPath.row)
+    }
+    
+    @IBAction func onEditTapped(sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+            tabeView.editing = true
+            sender.tag = 1
+        }
+        else {
+            tabeView.editing = false
+            sender.tag = 0
+        }
     }
 }
