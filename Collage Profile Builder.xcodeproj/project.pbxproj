@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F26B1FA1C56999F00185977 /* ClassOfCollages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F26B1F91C56999F00185977 /* ClassOfCollages.swift */; };
 		3F978A1F1C4FFD0900356906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F978A1E1C4FFD0900356906 /* AppDelegate.swift */; };
 		3F978A211C4FFD0900356906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F978A201C4FFD0900356906 /* ViewController.swift */; };
 		3F978A241C4FFD0900356906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F978A221C4FFD0900356906 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F26B1F91C56999F00185977 /* ClassOfCollages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfCollages.swift; sourceTree = "<group>"; };
 		3F978A1B1C4FFD0900356906 /* Collage Profile Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Collage Profile Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F978A1E1C4FFD0900356906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F978A201C4FFD0900356906 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				3F978A1E1C4FFD0900356906 /* AppDelegate.swift */,
 				3F978A201C4FFD0900356906 /* ViewController.swift */,
+				3F26B1F91C56999F00185977 /* ClassOfCollages.swift */,
 				3F978A221C4FFD0900356906 /* Main.storyboard */,
 				3F978A251C4FFD0900356906 /* Assets.xcassets */,
 				3F978A271C4FFD0900356906 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				3F978A211C4FFD0900356906 /* ViewController.swift in Sources */,
 				3F978A1F1C4FFD0900356906 /* AppDelegate.swift in Sources */,
+				3F26B1FA1C56999F00185977 /* ClassOfCollages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +491,7 @@
 				3F978A451C4FFD0900356906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F978A461C4FFD0900356906 /* Build configuration list for PBXNativeTarget "Collage Profile BuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				3F978A481C4FFD0900356906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F978A491C4FFD0900356906 /* Build configuration list for PBXNativeTarget "Collage Profile BuilderUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				3F978A4B1C4FFD0900356906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

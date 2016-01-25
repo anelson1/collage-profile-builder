@@ -12,17 +12,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tabeView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    var collages = ["University Of Illinois", "Airforce Acadamy", "Harvard"]
+    
+    var collages : [ClassOfCollages] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
+        collages.append(ClassOfCollages(name: "Harverd", state: "Boston", numberOfStudents: 420000, image: UIImage(named: "harvard")!))
+        collages.append(ClassOfCollages(name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 7004, image: UIImage(named: "airforce")!))
+        collages.append(ClassOfCollages(name: "Johns Hopkins", state: "Maryland", numberOfStudents: 7385485, image: UIImage(named: "johns")!))
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collages.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
-        cell.textLabel?.text = collages[indexPath.row]
+        cell.textLabel?.text = collages[indexPath.row].name
         return cell
     }
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -41,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addAction(cancelAction)
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let collageTextField = alert.textFields![0] as UITextField
-            self.collages.append(collageTextField.text!)
+            self.collages.append(ClassOfCollages(name: collageTextField.text!))
             self.tabeView.reloadData()
         }
         alert.addAction(addAction)
