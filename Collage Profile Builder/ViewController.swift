@@ -17,9 +17,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
-        collages.append(ClassOfCollages(name: "Harverd", state: "Boston", numberOfStudents: 420000, image: UIImage(named: "harvard")!))
-        collages.append(ClassOfCollages(name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 7004, image: UIImage(named: "airforce")!))
-        collages.append(ClassOfCollages(name: "Johns Hopkins", state: "Maryland", numberOfStudents: 7385485, image: UIImage(named: "johns")!))
+        collages.append(ClassOfCollages(name: "Harverd", state: "Boston", numberOfStudents: 21000, image: UIImage(named: "harvard")!))
+        collages.append(ClassOfCollages(name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 3952, image: UIImage(named: "airforce")!))
+        collages.append(ClassOfCollages(name: "Johns Hopkins", state: "Maryland", numberOfStudents:  21726, image: UIImage(named: "johns")!))
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tabeView.reloadData()
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collages.count
@@ -69,5 +73,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tabeView.editing = false
             sender.tag = 0
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! detailViewController
+        let index = tabeView.indexPathForSelectedRow?.row
+        dvc.colleg = collages[index!]
+        
+        
+
     }
 }
