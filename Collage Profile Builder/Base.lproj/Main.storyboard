@@ -33,7 +33,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -105,38 +105,75 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFW-4Y-gBE">
+                                <rect key="frame" x="225" y="212" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZD-ug-6Qm">
-                                <rect key="frame" x="175" y="214" width="250" height="150"/>
+                                <rect key="frame" x="175" y="258" width="250" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="t1z-Or-uTu"/>
                                     <constraint firstAttribute="width" constant="250" id="y5g-AZ-Cnm"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL6-pZ-6fq">
-                                <rect key="frame" x="283" y="372" width="34" height="30"/>
+                                <rect key="frame" x="283" y="416" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onSavedTappedAgain:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="YB1-jx-BA6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-4Z-BQv">
+                                <rect key="frame" x="409" y="211" width="30" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onGoButtonTapped:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="dn1-aI-y5a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-Ee-X07">
+                                <rect key="frame" x="433" y="352" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-fc-j7N">
+                                <rect key="frame" x="439" y="285" width="43" height="30"/>
+                                <state key="normal" title="Libary"/>
+                                <connections>
+                                    <action selector="onLibaryTapped:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="vDD-N7-FhR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="qFW-4Y-gBE" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="4id-7a-4fa"/>
                             <constraint firstItem="LOY-J2-X3k" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="7Ip-I0-2VW"/>
                             <constraint firstItem="NL6-pZ-6fq" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="Bsl-BC-RYp"/>
                             <constraint firstItem="cZD-ug-6Qm" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="GSa-ec-cmm"/>
+                            <constraint firstItem="dvX-Ee-X07" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" constant="160" id="KeB-Ca-bFf"/>
                             <constraint firstItem="GTy-Gf-GeA" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="LWI-Ph-AA4"/>
+                            <constraint firstItem="WEK-fc-j7N" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" constant="160.5" id="Rn0-id-BL8"/>
                             <constraint firstItem="kcz-bc-N82" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" id="ZjQ-II-APm"/>
+                            <constraint firstItem="BTE-4Z-BQv" firstAttribute="centerX" secondItem="S8w-xL-npv" secondAttribute="centerX" constant="124" id="b1v-p2-z89"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QY8-s7-VhQ" appends="YES" id="od5-tY-zPS"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="image" destination="cZD-ug-6Qm" id="D7t-IU-BYG"/>
                         <outlet property="nameTextField" destination="GTy-Gf-GeA" id="DA4-AN-TBn"/>
                         <outlet property="numberOfStudentsTextFIeld" destination="LOY-J2-X3k" id="OY5-ea-gws"/>
                         <outlet property="stateTextField" destination="kcz-bc-N82" id="MXd-rJ-v3a"/>
+                        <outlet property="urlTextField" destination="qFW-4Y-gBE" id="bjp-AR-JlA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ea-lp-XKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QY8-s7-VhQ">
+                    <connections>
+                        <action selector="onScreenTapped:" destination="sBK-Vq-a8b" id="AWN-V8-1fw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1750" y="289"/>
         </scene>

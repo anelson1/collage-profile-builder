@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tabeView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -17,9 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
-        collages.append(ClassOfCollages(name: "Harverd", state: "Boston", numberOfStudents: 21000, image: UIImage(named: "harvard")!))
-        collages.append(ClassOfCollages(name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 3952, image: UIImage(named: "airforce")!))
-        collages.append(ClassOfCollages(name: "Johns Hopkins", state: "Maryland", numberOfStudents:  21726, image: UIImage(named: "johns")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "http://www.harvard.edu")!, name: "Harvard", state: "Boston", numberOfStudents: 21000, image: UIImage(named: "harvard")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "http://www.usafa.af.mil")!, name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 3952, image: UIImage(named: "airforce")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "https://www.jhu.edu")!, name: "Johns Hopkins", state: "Maryland", numberOfStudents:  21726, image: UIImage(named: "johns")!))
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,9 +42,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func onPlusTapped(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add City", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Add Collage", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Add City Here"
+            textField.placeholder = "Add Collage Here"
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
