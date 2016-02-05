@@ -117,13 +117,6 @@
                                     <constraint firstAttribute="width" constant="250" id="y5g-AZ-Cnm"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL6-pZ-6fq">
-                                <rect key="frame" x="283" y="416" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="onSavedTappedAgain:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="YB1-jx-BA6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-4Z-BQv">
                                 <rect key="frame" x="409" y="211" width="30" height="30"/>
                                 <state key="normal" title="Go"/>
@@ -140,6 +133,13 @@
                                 <state key="normal" title="Libary"/>
                                 <connections>
                                     <action selector="onLibaryTapped:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="vDD-N7-FhR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL6-pZ-6fq">
+                                <rect key="frame" x="443" y="318" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSavedTappedAgain:" destination="sBK-Vq-a8b" eventType="touchUpInside" id="YB1-jx-BA6"/>
                                 </connections>
                             </button>
                         </subviews>
