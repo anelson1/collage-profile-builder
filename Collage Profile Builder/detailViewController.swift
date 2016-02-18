@@ -61,6 +61,14 @@ class detailViewController: UIViewController, SFSafariViewControllerDelegate, UI
     @IBAction func onScreenTapped(sender: AnyObject) {
         urlTextField.resignFirstResponder()
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let dvc = segue.destinationViewController as! MapViewController
+        dvc.location = colleg.location
+        
     }
+
+    
+      }
     
 

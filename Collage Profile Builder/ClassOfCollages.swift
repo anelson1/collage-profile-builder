@@ -14,14 +14,16 @@ var state = ""
 var numberOfStudents = 0
 var image = UIImage(named: "Default")
 var url = NSURL(string: "")
+var location = ""
     
-    convenience init(url: NSURL, name: String, state: String, numberOfStudents: Int, image: UIImage) {
+    convenience init(url: NSURL, location: String, name: String, state: String, numberOfStudents: Int, image: UIImage) {
         self.init()
         self.name = name
         self.state = state
         self.numberOfStudents = numberOfStudents
         self.image = image
         self.url = url
+        self.location = location
     }
     convenience init(name: String) {
         self.init()

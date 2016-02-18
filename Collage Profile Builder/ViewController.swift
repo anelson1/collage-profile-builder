@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
-
+    
     @IBOutlet weak var tabeView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -18,10 +18,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
-        collages.append(ClassOfCollages(url: NSURL(string: "http://www.harvard.edu")!, name: "Harvard", state: "Boston", numberOfStudents: 21000, image: UIImage(named: "harvard")!))
-        collages.append(ClassOfCollages(url: NSURL(string: "http://www.usafa.af.mil")!, name: "Air Force Acadamy", state: "Colorado", numberOfStudents: 3952, image: UIImage(named: "airforce")!))
-        collages.append(ClassOfCollages(url: NSURL(string: "https://www.jhu.edu")!, name: "Johns Hopkins", state: "Maryland", numberOfStudents:  21726, image: UIImage(named: "johns")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "http://www.harvard.edu")!, location: "Harvard University, MA", name: "Harvard", state: "Boston", numberOfStudents: 21000, image: UIImage(named: "harvard")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "http://www.usafa.af.mil")!, location: "U.S. Air Force Academy, CO", name: "Air Force Academy", state: "Colorado", numberOfStudents: 3952, image: UIImage(named: "airforce")!))
+        collages.append(ClassOfCollages(url: NSURL(string: "https://www.jhu.edu")!, location: "Johns Hopkins University MD",name: "Johns Hopkins", state: "Maryland", numberOfStudents:  21726, image: UIImage(named: "johns")!))
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tabeView.reloadData()
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
-
+    
     @IBAction func onPlusTapped(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add Collage", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -80,8 +81,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dvc = segue.destinationViewController as! detailViewController
         let index = tabeView.indexPathForSelectedRow?.row
         dvc.colleg = collages[index!]
-        
-        
-
     }
 }
